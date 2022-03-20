@@ -11,6 +11,7 @@ let pontosPc = 0
 let empate = 0
 let again;
 
+do {
 // Chamei os PROMPT para que possa interagir com o jogador e começar a introduzir nas escolhas.
 let nome = prompt(`Olá, vamos jogar! Qual é seu nome? `);
 console.log('=====================');
@@ -72,23 +73,17 @@ for (let contador = 0; contador < rodadas; contador++) {
         }
 
 } 
-
-// DO ... While para repetição. Saber se o usuário quer jogar novamente.
-do {
-    again = +prompt(`E aí, ${nome}, quer jogar de novo? 1-SIM 2-NÃO `);
-    console.log('=====================');
-    if (again == 2) {
-        console.log(`Beleza então, tmj!)`)
-    } else if (again != 1 && again != 2) {
-        console.log(`Não entendi!  `)
-    }
-    } while (again != 1 && again != 2)
-while (again == 1) {
+// Esse DO ... WHILE é pra repetir o jogo quando quiser. 
+    do{
+        again = +prompt(`E aí, ${nome}, quer jogar de novo? 1-SIM 2-NÃO `);
+        console.log('=====================');
+        if (again == 2) {
+            console.log(`Beleza então, tmj!)`)
+        } else if (again != 1 && again != 2) {
+            console.log(`Não entendi!  `)
+            again = +prompt(`E aí, ${nome}, quer jogar de novo? 1-SIM 2-NÃO `)
+            console.log('=====================');
+        }
+    }while(again!=1 && again!=2)
     
-}
-
-
-
-
-
-
+} while (again == 1)
