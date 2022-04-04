@@ -1,5 +1,4 @@
 const prompt = require("prompt-sync")();
-const colors=require('colors');
 console.clear();
 
 const pressEnter = () => {
